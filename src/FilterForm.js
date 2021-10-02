@@ -3,10 +3,33 @@ import {FilterOptions} from "./FilterOptions";
 import {FilterItems} from "./FilterItems";
 
 
+const cards = [
+    {
+        id: 8,
+        code: '[EXPERT]',
+        completedDateTime: '2017',
+        form: 'онлайн обучение',
+        institution:
+            'Московский издательско-полиграфический коледж имени Ивана Федорова',
+        programName:
+            'Эксперт демонстрационного экзамена по стандартам Ворлдскиллс Россия',
+        competenceName: 'Машинное обучение и большие данные'
+    },
+    {
+        id: 10,
+        code: '[TEST]',
+        completedDateTime: '2018',
+        form: 'онлайн обучение',
+        programName: 'Навигатор по Future Skills',
+        competenceName: 'Машинное обучение и большие данные',
+        institution:
+            'Московский издательско-полиграфический коледж имени Ивана Федорова'
+    }
+];
 
 export class FilterForm extends Component {
     state = {
-        data: this.props.data,
+        data: cards,
         completedDateTime: '',
     }
 
@@ -15,7 +38,7 @@ export class FilterForm extends Component {
     }
 
     render() {
-        let filteredItems = this.props.data;
+        let filteredItems = cards;
         const state = this.state;
         const filterProperties = [ "completedDateTime" ];
         filterProperties.forEach(function (filterBy) {
@@ -27,7 +50,7 @@ export class FilterForm extends Component {
             }
         });
 
-        const completedDateTimeArray = [...new Set(this.props.data.map(function (item) {
+        const completedDateTimeArray = [...new Set(cards.map(function (item) {
             return item.completedDateTime
         }))];
 
