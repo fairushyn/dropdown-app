@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import {FilterForm} from "./FilterForm";
+
+
+const cards = [
+  {
+    id: 8,
+    code: '[EXPERT]',
+    completedDateTime: '2017',
+    form: 'онлайн обучение',
+    institution:
+        'Московский издательско-полиграфический коледж имени Ивана Федорова',
+    programName:
+        'Эксперт демонстрационного экзамена по стандартам Ворлдскиллс Россия',
+    competenceName: 'Машинное обучение и большие данные'
+  },
+  {
+    id: 10,
+    code: '[TEST]',
+    completedDateTime: '2018',
+    form: 'онлайн обучение',
+    programName: 'Навигатор по Future Skills',
+    competenceName: 'Машинное обучение и большие данные',
+    institution:
+        'Московский издательско-полиграфический коледж имени Ивана Федорова'
+  }
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <FilterForm data={cards}/>
   );
 }
 
